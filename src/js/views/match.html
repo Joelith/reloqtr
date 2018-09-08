@@ -1,0 +1,73 @@
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<header role="banner" class="oj-web-applayout-header">
+  <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+    <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
+      <img src="css/images/reloqtr_icon.png" style="height: 30px;"/>
+      <h1 title="Application Name" data-bind="text: appName"></h1>
+    </div>
+    <div class="oj-flex-bar-end">
+      <!-- Responsive Toolbar -->
+      <oj-toolbar>
+        <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
+          <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
+          <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
+          <oj-menu id="menu1" slot="menu" style="display:none">
+            <oj-option id="pref" value="pref">Profile</oj-option>
+            <oj-option id="help" value="help">Help</oj-option>
+            <oj-option id="about" value="about">About</oj-option>
+            <oj-option id="out" value="out">Sign Out</oj-option>
+          </oj-menu>
+        </oj-menu-button>
+      </oj-toolbar>
+    </div>
+  </div>
+  <!--<div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
+    <oj-navigation-list data="[[navDataSource]]"
+                        :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
+                        display="[[smScreen() ? 'icons' : 'all']]"
+                        edge="top"
+                        item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
+                        selection="{{router.stateId}}">
+    </oj-navigation-list>
+  </div>-->
+</header>
+<div style="padding-bottom: 80px;">
+	<div class="">
+		<img style="width: 100%;" data-bind="attr:{src: image_url()}"/>
+		<div class="oj-hybrid-padding">
+	    <h2 data-bind="text: townHeading"></h2>
+			<i class="fa fa-map-marker"></i> <span data-bind="text: distance"></span>
+		</div>
+	</div>
+	<div class="border-desc oj-hybrid-padding">
+		<span data-bind="text: description"></span>
+	</div>
+	<div class="border-desc oj-hybrid-padding" style="text-align: center; color: #fd5068;">
+		RECOMMEND TO A FRIEND
+	</div>
+	<div class="border-desc oj-hybrid-padding">
+		<div>
+			<span data-bind="text: no_graffiti"></span> Graffiti Installations
+		</div>
+		<div class="grafitti_tiles" style="min-height: 34px;">
+			<div class="slide-zoom" data-bind="foreach: graffiti">
+				<div class="div-img r-3x" data-bind="style: {backgroundImage: 'url(\'' + image_url + '\')'}"></div>
+		  </div>
+		</div>
+	</div>
+	<div class="border-desc oj-hybrid-padding" style="clear: left;">
+		<h4>Key Stats</h4>
+		Population: <span data-bind="text: population"></span>
+	</div>
+</div>
+<div class="bottom-actions bottom-buttons">
+  <button class="oj-button-xl"  data-bind="click: likeClick, ojComponent: {component:'ojButton', chroming: 'full'}">
+    <i class="fa fa-heart" aria-label="like"></i>
+	</button>
+  <button class="oj-button-xl"  data-bind="click: noLikeClick, ojComponent: {component:'ojButton', chroming: 'full'}">
+     <i class="fa fa-close" aria-label="close"></i>
+	</button>
+</div>

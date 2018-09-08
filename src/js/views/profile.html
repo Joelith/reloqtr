@@ -1,0 +1,31 @@
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+	<oj-label for="slider">How important is commute time to you?</oj-label>
+	<oj-slider id="slider" value="{{commuteTime}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important is art to you?</oj-label>
+	<oj-slider id="slider" value="{{art}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important is fitness to you?</oj-label>
+	<oj-slider id="slider" value="{{fitness}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important are dog parks to you?</oj-label>
+	<oj-slider id="slider" value="{{dog}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How much do you enjoy public art?</oj-label>
+	<oj-slider id="slider" value="{{grafitti}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important is a weekend bbq to you?</oj-label>
+	<oj-slider id="slider" value="{{bbq}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important are parks and playgrounds to you?</oj-label>
+	<oj-slider id="slider" value="{{parks}}" min="0" max="100" step="10"></oj-slider>
+
+	<oj-label for="slider">How important are medical facilities close by to you?</oj-label>
+	<oj-slider id="slider" value="{{medical}}" min="0" max="100" step="10"></oj-slider>
+
+  <button id="submitBtn" class="oj-hybrid-padding-horizontal" data-bind="click: submitClick, ojComponent: {component:'ojButton', label: 'Submit', chroming: 'full'}"></button>
+</div>

@@ -1,0 +1,76 @@
+/**
+ * @license
+ * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ * The Universal Permissive License (UPL), Version 1.0
+ */
+/*
+ * Your dashboard ViewModel code goes here
+ */
+define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojbutton', 'ojs/ojslider'],
+ function(oj, ko, $, app) {
+  
+    function ProfileViewModel() {
+      var self = this;
+      // Below are a set of the ViewModel methods invoked by the oj-module component.
+      // Please reference the oj-module jsDoc for additional information.
+
+      self.commuteTime = ko.observable(50);
+      self.art = ko.observable(50);
+      self.fitness = ko.observable(50);
+      self.dog = ko.observable(50);
+      self.grafitti = ko.observable(50);
+      self.bbq = ko.observable(50);
+      self.parks = ko.observable(50);
+      self.medical = ko.observable(50);
+
+      self.submitClick = function () {
+        app.profile = {
+          commuteTime : self.commuteTime() / 100,
+          art : self.art() / 100,
+          fitness : self.fitness() / 100,
+          dog : self.dog() / 100,
+          grafitti : self.grafitti() / 100,
+          bbq : self.bbq() / 100,
+          parks : self.parks() / 100,
+          medical : self.medical() / 100
+        };
+
+        oj.Router.rootInstance.go('match');
+      }
+
+      /**
+       * Optional ViewModel method invoked after the View is inserted into the
+       * document DOM.  The application can put logic that requires the DOM being
+       * attached here. 
+       * This method might be called multiple times - after the View is created 
+       * and inserted into the DOM and after the View is reconnected 
+       * after being disconnected.
+       */
+      self.connected = function() {
+        // Implement if needed
+      };
+
+      /**
+       * Optional ViewModel method invoked after the View is disconnected from the DOM.
+       */
+      self.disconnected = function() {
+        // Implement if needed
+      };
+
+      /**
+       * Optional ViewModel method invoked after transition to the new View is complete.
+       * That includes any possible animation between the old and the new View.
+       */
+      self.transitionCompleted = function() {
+        // Implement if needed
+      };
+    }
+
+    /*
+     * Returns a constructor for the ViewModel so that the ViewModel is constructed
+     * each time the view is displayed.  Return an instance of the ViewModel if
+     * only one instance of the ViewModel is needed.
+     */
+    return new ProfileViewModel();
+  }
+);
