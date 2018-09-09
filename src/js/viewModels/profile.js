@@ -23,16 +23,33 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojbutton', 'oj
       self.parks = ko.observable(50);
       self.medical = ko.observable(50);
 
+      self.bbal = ko.observable(50);
+      self.skate = ko.observable(50);
+      self.fitness = ko.observable(50);
+      self.balloons = ko.observable(50);
+      self.tigers = ko.observable(50);
+      self.bonsais = ko.observable(50);
+      self.truffles = ko.observable(50);
+      self.flowers = ko.observable(50);
+      self.trains = ko.observable(50);
+
       self.submitClick = function () {
         app.profile = {
-          commuteTime : self.commuteTime() / 100,
-          art : self.art() / 100,
-          fitness : self.fitness() / 100,
-          dog : self.dog() / 100,
-          grafitti : self.grafitti() / 100,
-          bbq : self.bbq() / 100,
-          parks : self.parks() / 100,
-          medical : self.medical() / 100
+          NO_PARKS_AND_PLAYGROUNDS: self.parks() / 100,
+          COMMUTE_TIME : self.commuteTime() / 100,
+          NO_GRAFITTI : self.grafitti() / 100,
+          BBALL : self.bbal() / 100,
+          NO_SKATE_PARKS : self.skate() / 100,
+          BBQ : self.bbq() / 100,
+          FIT : self.fitness() / 100,
+          DOG : self.dog() / 100,
+          ART : self.grafitti() / 100,
+          air_balloons : self.balloons() / 100,
+          tigers : self.tigers() / 100,
+          bonsais : self.bonsais() / 100,
+          farming_truffles : self.truffles() / 100,
+          flower_parties : self.flowers() / 100,
+          old_trains : self.trains() / 100
         };
 
         oj.Router.rootInstance.go('match');
