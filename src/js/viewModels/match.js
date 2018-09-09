@@ -40,9 +40,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojbutton', 'oj
       self.no_graffiti = ko.observable();
 
       self.townHeading = ko.computed(function() {
-        return self.townName() + ', ' + self.age();
+        return self.townName() + ', ' + (2018 - self.age());
       })
-      
+
       // Header
       // Application Name used in Branding Area
       self.appName = ko.observable("Reloqtr");
